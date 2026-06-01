@@ -13,11 +13,13 @@ A highly modular recommendation system built in Python utilizing Object-Oriented
 ## 📊 Algorithmic Breakdown
 
 ### 1. Simple Recommendation (Popularity-Based)
-To prevent cold-start biases where items with very few votes skew the top charts, the system implements a **Bayesian-corrected scoring formula**:
+To prevent cold-start biases where items with very few votes skew the top charts, the system implements a Bayesian-corrected scoring formula:
+
 $$score = \left(\frac{\text{num\_vots}}{\text{num\_vots} + \text{min\_vots}} \cdot \text{avg\_item}\right) + \left(\frac{\text{min\_vots}}{\text{num\_vots} + \text{min\_vots}} \cdot \text{avg\_global}\right)$$
 
 ### 2. Collaborative Filtering (User-User Interaction)
-Measures the directional affinity between users using the **Cosinus Distance** metric on matching item interaction vectors:
+Measures the directional affinity between users using the Cosinus Distance metric on matching item interaction vectors:
+
 $$s(u,v) = \frac{\sum_{i \in I} p_{ui} \cdot p_{vi}}{\sqrt{\sum_{i \in I} p_{ui}^2} \sqrt{\sum_{i \in I} p_{vi}^2}}$$
 
 ### 3. Content-Based Filtering (Feature Vectorization & Profiles)
